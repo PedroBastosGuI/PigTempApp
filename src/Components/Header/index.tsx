@@ -1,7 +1,6 @@
 import pig from '../../assets/pig.png';
 import { Container, Content } from './styled';
 
-
 export function Header(){
     return(
         <header>
