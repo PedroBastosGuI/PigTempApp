@@ -7,7 +7,9 @@ export function Header(){
             <Container>
                 <Content>
                     <img src={pig}/>
-                    <button type="button">Verificar Dados
+                    <button type="button">Relatorio Do Ambiente
+                    </button>
+                    <button type="button">Como Usar TempPig
                     </button>
                 </Content>
             </Container>

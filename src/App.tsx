@@ -9,13 +9,43 @@ export function App() {
         
         <Header/>
         <GlobalStyle/>
-        <div className="container">
-            <div className='row px-3'>
+        <div className="container py-5">
+            <div className='row px-3' >
                 <div className='co-sm-6'>
+                <h4 className="font-weight-bold h1">T Máxima °C</h4>
                 <Dash/>
                 </div>
             </div>
-        </div>
+
+            <div className='row px-3'>
+                <div className='co-sm-6'>
+                <h4 className="font-weight-bold h1">T Mínima °C</h4>
+                <Dash/>
+                </div>
+            </div>
+
+            <div className='row px-3'>
+                <div className='co-sm-6'>
+                <h4 className="font-weight-bold h1">T Média °C</h4>
+                <Dash/>
+                </div>
+            </div>   
+
+            <div className='row px-3'>
+                <div className='co-sm-6'>
+                <h4 className="font-weight-bold h1">Presão do Ar(Kpa)</h4>
+                <Dash/>
+                </div>
+            </div>
+
+            <div className='row px-3'>
+                <div className='co-sm-6'>
+                <h4 className="font-weight-bold h1">Umidade Relativa(%)</h4>
+                <Dash/>
+                </div>
+            </div>
+            </div>
+        
         
        </>
    )
