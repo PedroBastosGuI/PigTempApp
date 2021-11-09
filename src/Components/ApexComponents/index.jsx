@@ -30,47 +30,75 @@ import axios from 'axios';
       }
     )
 
-    const [series, setSeries] = useState([{
-      name:'Temperatura',
-      data:["19.3","18.8","18.6","18.1","17.9",
-      "17.2","13.9","13.6","14"]
-    }]);
+    const [series, setSeries] = useState([{}]);
     //requisição para pegar os valores 
     useEffect(()=>{
         //criando lista para armazenar os valor
         const data=[];
         const temp=[];
 
-        axios.get("https://apitempo.inmet.gov.br/estacao/dados/2020-05-02").then((response=>{
+        axios.get("https://apitempo.inmet.gov.br/estacao/2019-10-23/2019-10-23/A301").then((response=>{
           console.log('response',response);
             response.data.map(item => {
             //console.log('item',item)
-            data.push(item.DT_MEDICAO);
-            temp.push(item.TEM_MAX);
-          }) 
+           data.push(item.DT_MEDICAO);
+           temp.push(item.TEM_MAX);
+          })
         }));
 
-        setObject({
+
+  
+        
+       setObject({
 
           chart:{
-            id:'Testing',
-            background:'#00010',
-            foreColor: '#000',
-
+            id:'Temperatura',
       }, 
         xaxi:{
           category: data
        },
 
         width:{
-          width: 9,
+          width: 12,
       }, 
 
         stroke: {
-          curve:['smooth'],
+          show: true,
+          curve: 'straight',
+          lineCap: 'butt',
+          colors: undefined,
+          width: 7,
+          dashArray: 0, 
       },
 
-      color:['#ffe70d']
+      title: {
+        text: 'Temperatura Máximo externa',
+        align: 'left'
+      },
+
+      datalabels: {
+        enabled: false,
+      },
+
+      markers: {
+        shape: "circle",
+        size: [4, 7]
+      },
+
+              theme: {
+                monochrome: {
+                    enabled: true,
+                    color: '#f2ba0c',
+                    shadeTo: 'dark',
+                    shadeIntensity: 1
+                },
+        },
+
+        grid: {
+          show: false,
+        },
+
+        
 
         });
       //linha do setObejct
@@ -82,6 +110,7 @@ import axios from 'axios';
       )
       console.log('data',data,temp)
     },[])
+
     
     
     return(

@@ -37,7 +37,7 @@ const PressionDash = () =>{
     return(
         <Chart
         options={options}
-        type={'line'}
+        type={'area'}
         series={series}
         width={1110}
         height={300}
