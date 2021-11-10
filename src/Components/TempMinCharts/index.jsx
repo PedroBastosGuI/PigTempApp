@@ -1,38 +1,47 @@
-import Chart from 'react-apexcharts';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import Chart from "react-apexcharts";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+
+// criando o PressionCharts
 
 
-const DashPress = () => {
+const DashMin = () => {
+    // criando um estado de
+
+    const[options, setObject] = useState({});
+    const [series, setSeries] = useState([{}]);
 
 
-    const[options,setObject] = useState({});
-    const[series, setSeries] = useState([{}]);
-
+    // controlando o ciclo de vida dos components que
 
     useEffect(()=>{
 
-        const pressaohora = [];
-        const pressao = [];
+        //criando array para armazar
+        const horaMin = [];
+        const tempMin = [];
 
+
+// fazer a requeste
 
         axios.get("https://apitempo.inmet.gov.br/estacao/2019-10-23/2019-10-23/A301")
         .then((response) => {
-            console.log('ResponseRad', response)
+            console.log('ResposeMin',response);
+            //tratar a response
 
             response.data.map(item => {
-                pressaohora.push(item.HR_MEDICAO);
-                pressao.push(item.PRE_MAX)
+                horaMin.push(item.HR_MEDICAO);
+                tempMin.push(item.TEM_MIN);
             })
         });
+
 
         setObject({
 
             chart:{
-                id:'Pressão do Ar',
+                id:'Temperatura',
           }, 
             xaxi:{
-              category: pressaohora
+              category: horaMin
            },
     
             width:{
@@ -47,9 +56,9 @@ const DashPress = () => {
               width: 7,
               dashArray: 0, 
           },
-    
+
           title: {
-            text: 'Pressão do Ar externa',
+            text: 'Temperatura Mímina externa',
             align: 'left'
           },
     
@@ -74,18 +83,18 @@ const DashPress = () => {
             grid: {
               show: false,
             },
-
-
+    
         });
 
         setSeries([{
-            name:'Pressão do Ar',
-            data: pressao
+            name: 'Temperatura Minima',
+            data:tempMin
         }])
+
 
     }, [])
 
-    return (
+    return(
         <Chart
         options={options} 
         series={series} 
@@ -96,4 +105,5 @@ const DashPress = () => {
     )
 }
 
-export default DashPress;
+
+export default DashMin

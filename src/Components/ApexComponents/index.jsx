@@ -7,29 +7,7 @@ import axios from 'axios';
  const Dash  = () => {
 
     //um state 
-    const[options, setObject] = useState(
-      {
-        chart:{
-          id:'Testing',
-          background:'#00010',
-      }, 
-      xaxi:{
-          category:[]
-      },
-      title:{
-          style: {
-              fontSize: "16px",
-              color: '#666'
-            }
-
-      },
-      width:{
-          width: 9,
-      },      
-      color:["#ffe70d"]        
-      }
-    )
-
+    const[options, setObject] = useState({})
     const [series, setSeries] = useState([{}]);
     //requisição para pegar os valores 
     useEffect(()=>{
@@ -46,9 +24,6 @@ import axios from 'axios';
           })
         }));
 
-
-  
-        
        setObject({
 
           chart:{
@@ -98,8 +73,6 @@ import axios from 'axios';
           show: false,
         },
 
-        
-
         });
       //linha do setObejct
 
@@ -108,17 +81,14 @@ import axios from 'axios';
         data: temp,
       }]
       )
-      console.log('data',data,temp)
     },[])
 
-    
-    
     return(
       <Chart
         options={options} 
         series={series} 
         type="area"
-        width={1110}
+        width={1350}
         height={300}
       />
         );

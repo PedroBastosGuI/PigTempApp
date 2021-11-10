@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 
-const DashPress = () => {
+const DashUmi = () => {
 
 
     const[options,setObject] = useState({});
@@ -12,8 +12,8 @@ const DashPress = () => {
 
     useEffect(()=>{
 
-        const pressaohora = [];
-        const pressao = [];
+        const umidadeHora = [];
+        const umidade = [];
 
 
         axios.get("https://apitempo.inmet.gov.br/estacao/2019-10-23/2019-10-23/A301")
@@ -21,18 +21,18 @@ const DashPress = () => {
             console.log('ResponseRad', response)
 
             response.data.map(item => {
-                pressaohora.push(item.HR_MEDICAO);
-                pressao.push(item.PRE_MAX)
+                umidadeHora.push(item.HR_MEDICAO);
+                umidade.push(item.UMD_MAX)
             })
         });
 
         setObject({
 
             chart:{
-                id:'Pressão do Ar',
+                id:'Umidade Relativa',
           }, 
             xaxi:{
-              category: pressaohora
+              category: umidadeHora
            },
     
             width:{
@@ -49,7 +49,7 @@ const DashPress = () => {
           },
     
           title: {
-            text: 'Pressão do Ar externa',
+            text: 'Umidade Relativa',
             align: 'left'
           },
     
@@ -79,8 +79,8 @@ const DashPress = () => {
         });
 
         setSeries([{
-            name:'Pressão do Ar',
-            data: pressao
+            name:'Umidade relativa',
+            data: umidade
         }])
 
     }, [])
@@ -96,4 +96,4 @@ const DashPress = () => {
     )
 }
 
-export default DashPress;
+export default DashUmi;
