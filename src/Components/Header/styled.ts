@@ -37,3 +37,72 @@ button{
 }
 
 `
+
+
+export const ModalContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        max-width: 100%;
+        width: 30rem;
+        height: 30rem;
+    };
+
+    h1{
+        font-family: 'Noto Sans', sans-serif;
+        font-size:3rem;
+        color: var(--black-100);
+        margin-top: 1.2rem;
+        strong{
+            color:#f0adb4;
+        }
+    }
+
+        p{
+            font-family: 'Noto Sans', sans-serif;
+            font-size:1.25rem;
+            color: var(--black-100);
+            margin-top: 1.2rem;
+        };
+
+    h3{
+        
+        font-family: 'Noto Sans', sans-serif;
+        font-size:2rem;
+        color: var(--black-100);
+                margin-top: 1.2rem;
+
+
+    }
+
+
+`
+
+export const ModalTwoContainer = styled.div`
+margin-top: 4rem;
+table{
+    width: 100%;
+    border-spacing: 0 0.5rem;
+
+    th{
+        color: var(--black-100);
+        font-weight: 400;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size:1.5rem
+
+    }
+
+    td{
+        color: var(--black-100);
+        font-weight: 400;
+        border: 0;
+        background-color: #ffff;
+        border-radius:0.2rem;
+        text-align:center;
+        font-size:1.75rem
+    }
+}
+
+`

@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
         --background: #f7f7ca;
-        --black-50: #1a1d1b;
+        --background-50: #f6eba6;
         --black-100: #000000;
         --text-title: #363f5f;
         --text-body: #969cb3;

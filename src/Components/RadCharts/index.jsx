@@ -16,7 +16,7 @@ const DashRad = () => {
         const rad = [];
 
 
-        axios.get("https://apitempo.inmet.gov.br/estacao/2019-10-23/2019-10-23/A301")
+        axios.get("https://apitempo.inmet.gov.br/estacao/2021-10-9/2021-10-9/A907")
         .then((response) => {
             console.log('ResponseRad', response)
 

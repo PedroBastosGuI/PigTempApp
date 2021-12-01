@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Dash from './Components/ApexComponents';
 import { Header } from './Components/Header';
 import DashPress from './Components/PressionCharts';
@@ -7,13 +7,28 @@ import DashRad from './Components/RadCharts';
 import DashMin from './Components/TempMinCharts';
 import DashUmi from './Components/UmidadeCharts';
 import { GlobalStyle } from './styles/global';
+import Modal2 from 'react-modal';
+
+import Modal from 'react-modal'
 export function App() {
+    
+
+   
 
    return(
        <>
         
         <Header/>
         <GlobalStyle/>
+
+        
+
+            
+
+
+
+
+
         <div className="container py-5">
             <div className='row px-3' >
                 <div className='co-sm-6'>
