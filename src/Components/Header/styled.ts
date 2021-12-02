@@ -81,6 +81,14 @@ export const ModalContainer = styled.div`
 
 export const ModalTwoContainer = styled.div`
 margin-top: 4rem;
+h1{
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--black-100);
+    font-weight: 400;
+    font-size:4rem
+
+}
 table{
     width: 100%;
     border-spacing: 0 0.5rem;

@@ -21,14 +21,6 @@ export function App() {
         <Header/>
         <GlobalStyle/>
 
-        
-
-            
-
-
-
-
-
         <div className="container py-5">
             <div className='row px-3' >
                 <div className='co-sm-6'>
